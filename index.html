@@ -17,13 +17,20 @@
         <a class="landing__arrow" href="#navigation"></a>
     </header>
     <nav id="navigation" class="navigation">
-        <ul class="navigation__container">
-            <li class="navigation__name"><a href="#main">MariaAnna</a></li>
-            <li class="navigation__item"><a href="#about-me">About me</a></li>
-            <li class="navigation__item"><a href="#works">Works</a></li>
-            <li class="navigation__item"><a href="#contact-me">Contact me</a></li>
-            <li class="navigation__item"><a href="#follow-me">Follow me</a></li>
-        </ul>
+        <div class="navigation__container">
+            <a class="navigation__name" href="#main">MariaAnna</a>
+            <div class="ham-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#about-me">About me</a></li>
+                <li class="navigation__item"><a href="#works">Works</a></li>
+                <li class="navigation__item"><a href="#contact-me">Contact me</a></li>
+                <li class="navigation__item"><a href="#follow-me">Follow me</a></li>                
+            </ul>
+        </div>
     </nav>
     <section id="about-me" class="about-me">
         <h2 class="about-me__title">A little bit about me</h2>
@@ -192,6 +199,29 @@
         for(let i=0; i<pagination_dots.length; i++) {
             pagination_dots[i].addEventListener("click", change_slide);
         }
+
+        /*HAMBURGER MENU*/
+
+        const hamburger_button = document.querySelector('.ham-icon');
+        const mobile_menu = document.querySelector('.navigation__list');
+        const menu_items = document.querySelectorAll('.navigation__item');
+
+        function openMenu(event) {
+            this.classList.toggle('ham-icon__open');
+            mobile_menu.classList.toggle('navigation__list--open');
+        }
+
+        function hideMenu(event) {
+            mobile_menu.classList.toggle('navigation__list--open');
+            hamburger_button.classList.toggle('ham-icon__open');
+        }
+
+        hamburger_button.addEventListener("click", openMenu);
+
+        for(let i=0; i<menu_items.length; i++) {
+            menu_items[i].addEventListener("click", hideMenu);
+        }
+        
     
     </script>
 </body>
