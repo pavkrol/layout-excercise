@@ -786,7 +786,22 @@ a, a:link, a:visited {
 }
 
 @media screen and (max-width: 850px) {
-    
+    .landing__arrow {
+        display: none;
+    }
+
+    .landing__title {
+        font-size: 26px;
+    }
+
+    .landing__subtitle {
+        font-size: 39px;
+    }
+
+    .about-me {
+        padding: 0 10%;
+    }
+
     .navigation__list {
         padding: 20px 0 20px 0;
         display: none;
@@ -826,6 +841,39 @@ a, a:link, a:visited {
     .navigation__item:hover {
         border: none;
         padding: 0;
+    }
+
+    .works {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  70px repeat(3, calc((100vw - 75px) / 2));
+    }
+
+    .works__title {
+        grid-column: 1 / 3;
+    }
+    .nature {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .urban {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .people {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .wedding {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .architecture {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    .animals {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
     }
 }
 
