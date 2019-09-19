@@ -250,6 +250,7 @@ a, a:link, a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .works__item:hover {
@@ -287,7 +288,7 @@ a, a:link, a:visited {
 }
 
 .caption {
-    width: 200px;
+    max-width: 200px;
     height: 80px;
     color: white;
     text-align: center;
@@ -374,9 +375,13 @@ a, a:link, a:visited {
     margin: 5px auto 3px auto;
 }
 
-.works__item:hover .caption {
-    width: 300px;
-    height: 120px;
+.caption__col--left, .caption__col--right {
+    transition: transform 0.3s ease-in-out;
+}
+
+.works__item:hover .caption__col--left,
+.works__item:hover .caption__col--right {
+    transform: scale(1.7);
 }
 
 .architecture .caption {
@@ -671,6 +676,7 @@ a, a:link, a:visited {
     font-weight: 300;
     color: var(--lighter-grey);
     margin-bottom: 55px;
+    text-align: center;
 }
 
 .contact-me__form {
@@ -846,6 +852,11 @@ a, a:link, a:visited {
     .works {
         grid-template-columns: 1fr 1fr;
         grid-template-rows:  70px repeat(3, calc((100vw - 75px) / 2));
+        margin-bottom: 100px;
+    }
+
+    .slider {
+        padding-top: 100px;
     }
 
     .works__title {
@@ -874,6 +885,55 @@ a, a:link, a:visited {
     .animals {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
+    }
+
+    .works__item h3 {
+        font-size: 20px;
+    }
+
+    .works__item h4 {
+        font-size: 14px;
+    }
+    .works__btn {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .works {
+        grid-template-columns: 1fr;
+        grid-template-rows:  70px repeat(6, calc(100vw - 50px));
+    }
+
+    .landing {
+        padding: 0 30px;
+    }
+
+    .works__item {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .works__title {
+        grid-column: 1 / 2;
+    }
+
+    .landing__subtitle {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .landing__description {
+        width: 80%;
+    }
+
+    .contact-me__form {
+        width: calc(100% - 40px);
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .contact-me__subtitle {
+        padding: 0 20px;
     }
 }
 
