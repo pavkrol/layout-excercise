@@ -25,6 +25,7 @@ html {
 body {
     margin: 25px 25px 0 25px;
     background-color: white;
+    overflow-x: hidden;
 }
 
 li {
@@ -583,6 +584,7 @@ a, a:link, a:visited {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .caption__subtitle {
@@ -935,6 +937,12 @@ a, a:link, a:visited {
     .contact-me__subtitle {
         padding: 0 20px;
     }
+
+    .social {
+        flex-wrap: wrap;
+    }
+
+
 }
 
 
