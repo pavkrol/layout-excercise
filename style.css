@@ -37,6 +37,14 @@ a, a:link, a:visited {
     text-decoration: none;
 }
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
 
 .landing {
     background-image: url(IMG/landing-background.jpg);
